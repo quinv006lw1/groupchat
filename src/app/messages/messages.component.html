@@ -1,0 +1,17 @@
+<button mat-button [routerLink]="['/chat']">Back to groups</button>
+<!-- <ul>
+    <li *ngFor="let message of messages | async">
+        {{ message | json }}
+    </li>
+</ul> -->
+<mat-list>
+    <h3 mat-subheader>{{ group }}</h3>
+    <mat-list-item *ngFor="let message of messages | async">
+        {{ message.text }}
+    </mat-list-item>
+</mat-list>
+<div class="message-editor">
+    <mat-form-field class="message-editor-field">
+        <input autocomplete="off" placeholder="Message the group" matInput [(ngModel)]="newMessage" (keyup.enter)="send()">
+    </mat-form-field>
+</div>

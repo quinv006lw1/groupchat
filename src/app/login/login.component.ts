@@ -11,10 +11,17 @@ export class LoginComponent implements OnInit {
   error = '';
   constructor(
     private router:Router,
-    private firebaseAuth:AngularFireAuth{}
+    private firebaseAuth:AngularFireAuth
   ) { }
   login(username:string, password:string){
-    this.router.navigate(['chat'])
+    this.firebaseAuth.signInWithEmailAndPassword(username, password).then(
+      credential => {
+        console.log(credential);
+        this.router.navigate(['chat'])
+      },err=>{
+        this.error=err.message || 'unknown error'
+      }
+    )
   }
   ngOnInit(): void {  
   }

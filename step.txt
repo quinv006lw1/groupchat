@@ -1,0 +1,49 @@
+1/ npm i -g @angular/cli@latest
+2/ ng new name
+3/ add Angular routing (y)
+4/ Scss
+5/ ng serve --open // http://localhost:4200/
+6/ <base href="/"> to <base href="./"> //index.html
+7/ npm i electron -D // npm i -g electron
+8/ npm run serve
+9/ npm start
+10/	firebase.google.com
+11/	npm i --save @angular/material @angular/cdk @angular/animations
+12/	src/app/app.module.ts
+13/	import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
+],
+14/ src/styles.scss
+15/	@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+16/ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> index.html
+17/ src/app/app.module.ts
+18/ import { MatToolbarModule } from '@angular/material/toolbar';
+19/ change app.component html and scss
+19/ ng g component login
+20/ src/app/app-routing.module.ts add new route with url /login connect to Login Dialog
+import {LoginComponent} from './login/login.component';
+const routes: Routes = [{
+	path:'login',
+	component: LoginComponent
+}];
+21/ update app	 component html css
+22/import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+23/ng g component chat
+24/ import { Router } from '@angular/router';
+25/src/environment/environment.ts
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyAKmADQHea-UrOSV_wa5Jab1LmJ3CXTbGw",
+    authDomain: "electron-chat-app-ed25e.firebaseapp.com",
+    projectId: "electron-chat-app-ed25e",
+    storageBucket: "electron-chat-app-ed25e.appspot.com",
+    messagingSenderId: "266325715598",
+    appId: "1:266325715598:web:ad545860506828aa6bb7df"
+  }
+};
+26/ npm  i @angular/fire firebase
